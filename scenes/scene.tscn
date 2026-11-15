@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cwieblvhhgyc3"]
+
+[ext_resource type="PackedScene" uid="uid://xm3tde032do5" path="res://scenes/player.tscn" id="1_1kc1q"]
+[ext_resource type="PackedScene" uid="uid://dcsq5meq6fplu" path="res://resources/apartment_baked/apartment__baked.glb" id="1_ulcgi"]
+[ext_resource type="PackedScene" uid="uid://bk2ogo5xb7kla" path="res://scenes/Door.tscn" id="3_4msxo"]
+[ext_resource type="PackedScene" uid="uid://j6rjbh68rupx" path="res://scenes/Furniture.tscn" id="4_5fb3c"]
+[ext_resource type="PackedScene" uid="uid://3py41yo5r2kj" path="res://scenes/Note.tscn" id="5_gjmho"]
+[ext_resource type="PackedScene" uid="uid://btn350dcbvidj" path="res://scenes/Book.tscn" id="6_t7and"]
+
+[node name="Node3D" type="Node3D" unique_id=743209400]
+
+[node name="CharacterBody3D" parent="." unique_id=4254125 instance=ExtResource("1_1kc1q")]
+
+[node name="Apartment" type="Node3D" parent="." unique_id=231299832]
+
+[node name="Sketchfab_Scene" parent="Apartment" unique_id=1365537174 instance=ExtResource("1_ulcgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.708248, -0.073009014, -1.6258364)
+
+[node name="Sketchfab_Scene2" parent="Apartment" unique_id=991430406 instance=ExtResource("1_ulcgi")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 7.196, -0.073, 8.515)
+
+[node name="Doors" type="Node" parent="Apartment" unique_id=530036953]
+
+[node name="Door" parent="Apartment/Doors" unique_id=1234180736 instance=ExtResource("3_4msxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4404244, -0.07300841, 3.4551983)
+
+[node name="Door2" parent="Apartment/Doors" unique_id=915083685 instance=ExtResource("3_4msxo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.589116, -0.07299957, 5.091893)
+
+[node name="Door3" parent="Apartment/Doors" unique_id=1002379691 instance=ExtResource("3_4msxo")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.268548, -0.07300865, 1.8044066)
+
+[node name="Furnitures" type="Node" parent="." unique_id=1853464626]
+
+[node name="Furniture" parent="Furnitures" unique_id=1502406649 instance=ExtResource("4_5fb3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.499632, 0.33472574, 3.8725085)
+
+[node name="Furniture2" parent="Furnitures" unique_id=591147641 instance=ExtResource("4_5fb3c")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.44218, 0.33472508, 8.772273)
+
+[node name="Furniture3" parent="Furnitures" unique_id=1990785575 instance=ExtResource("4_5fb3c")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.363575, 0.3347165, 3.0029912)
+
+[node name="Furniture4" parent="Furnitures" unique_id=2109918662 instance=ExtResource("4_5fb3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6518114, 0.3347162, -1.8857647)
+
+[node name="Notes" type="Node" parent="." unique_id=1274316433]
+
+[node name="Note" parent="Notes" unique_id=2081294864 instance=ExtResource("5_gjmho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.566755, -0.06503199, -1.137274)
+
+[node name="Note2" parent="Notes" unique_id=1161927593 instance=ExtResource("5_gjmho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66111, 0.7961482, 2.8284335)
+
+[node name="Note3" parent="Notes" unique_id=911901606 instance=ExtResource("5_gjmho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47220683, 0.5848689, 4.448215)
+
+[node name="Note4" parent="Notes" unique_id=79949512 instance=ExtResource("5_gjmho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.274237, 0.7347971, 6.9506984)
+
+[node name="Books" type="Node" parent="." unique_id=2032754260]
+
+[node name="Book" parent="Books" unique_id=1140668500 instance=ExtResource("6_t7and")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.775985, 0.78425133, 3.9042125)
+Text = "Ляляля, я Семен Лобанов, у меня голова из картошки.
+"
+
+[node name="Book2" parent="Books" unique_id=850778030 instance=ExtResource("6_t7and")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.5714264, 0.6046414, 6.986436)
+Text = "А судьи кто? – За древностию лет К свободной жизни их вражда непримирима, Сужденья черпают из забытых газет Времён Очаковских и покоренья Крыма;
+Всегда готовые к журьбе, Поют всё песнь одну и ту же, Не замечая об себе: Что старее, то хуже.
+Где? укажите нам, отечества отцы, Которых мы должны принять за образцы? Не эти ли, грабительством богаты? Защиту от суда в друзьях нашли, в родстве, Великолепные соорудя палаты, Где разливаются в пирах и мотовстве, И где не воскресят клиенты-иностранцы Прошедшего житья подлейшие черты.
+Да и кому в Москве не зажимали рты Обеды, ужины и танцы? Не тот ли, вы к кому меня ещё с пелен, Для замыслов каких-то непонятных, Дитёй возили на поклон?
+Тот Нестор негодяев знатных, Толпою окружённый слуг; Усердствуя, они в часы вина и драки И честь, и жизнь его не раз спасали: вдруг На них он выменял борзые три собаки!!!
+Или вон тот ещё, который для затей На крепостной балет согнал на многих фурах От матерей, отцов отторженных детей?! Сам погружён умом в Зефирах и в Амурах, Заставил всю Москву дивиться их красе! Но должников не согласил к отсрочке: Амуры и Зефиры все Распроданы поодиночке!!!
+Вот те, которые дожили до седин! Вот уважать кого должны мы на безлюдьи! Вот наши строгие ценители и судьи!
+Теперь пускай из нас один, Из молодых людей, найдётся – враг исканий, Не требуя ни мест, ни повышенья в чин, В науки он вперит ум, алчущий познаний; Или в душе его сам бог возбудит жар К искусствам творческим, высоким и прекрасным, – Они тотчас: разбой! пожар! И прослывёт у них мечтателем! опасным!!
+– Мундир! один мундир! он в прежнем их быту Когда-то укрывал, расшитый и красивый, Их слабодушие, рассудка нищету; И нам за ними в путь счастливый!
+И в жёнах, дочерях – к мундиру та же страсть! Я сам к нему давно ль от нежности отрёкся?! Теперь уж в это мне ребячество не впасть; Но кто б тогда за всеми не повлёкся?
+Когда из гвардии, иные от двора Сюда на время приезжали, – Кричали женщины: ура! И в воздух чепчики бросали! 
+"
+
+[node name="Book3" parent="Books" unique_id=1808212576 instance=ExtResource("6_t7and")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.710152, 0.9045691, -0.120654225)
+Text = "- Я клубника ты клубника , как мог родится банан!?
+
+- Милый, я всё объясню.
+
+- Что ты собираешься объяснять!? Что он выглядит точно так же, как твой босс????
+
+- Это была ошибка!
+
+- По ошибке можно разбить тарелку, а это банан!
+
+В камине в 6 утра фотография твоя"
+
+[node name="Book4" parent="Books" unique_id=1492672495 instance=ExtResource("6_t7and")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.274008, 0.60463196, -2.5568743)
+Text = "Вот он реально добился всего,аккуратненько танцует,без кипиша и суеты. вот он,простой пацанчик с деревни,без понтов такой же простой как и мы с вами,респект таким,пусть танцует"

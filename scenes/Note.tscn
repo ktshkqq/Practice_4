@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://3py41yo5r2kj"]
+
+[ext_resource type="PackedScene" uid="uid://dwm6ryffsljb8" path="res://resources/note/Note.glb" id="1_ku001"]
+[ext_resource type="Script" uid="uid://khchuhop2pk0" path="res://objects/Note.cs" id="1_tqwf5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ku001"]
+radius = 0.71677786
+
+[node name="Note" type="Area3D" unique_id=2081294864 node_paths=PackedStringArray("canvasLayer", "richTextLabel")]
+script = ExtResource("1_tqwf5")
+Text = "Для того, чтобы найти секрет, сломай один из ящиков"
+canvasLayer = NodePath("CanvasLayer")
+richTextLabel = NodePath("CanvasLayer/RichTextLabel")
+metadata/_custom_type_script = "uid://khchuhop2pk0"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748806689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027098171, 0)
+shape = SubResource("SphereShape3D_ku001")
+
+[node name="Sketchfab_Scene" parent="." unique_id=393986487 instance=ExtResource("1_ku001")]
+transform = Transform3D(-4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, 0, 0, 0, 0.1, 0.0001989603, 0, -0.00059236586)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=256419002]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=624229101]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 952.0
+offset_bottom = 541.0
+color = Color(0.20032999, 0.20033002, 0.20032993, 0.9607843)
+
+[node name="TextureRect2" type="ColorRect" parent="CanvasLayer" unique_id=533666796]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -401.0
+offset_right = 287.0
+offset_bottom = 400.0
+color = Color(0.9324003, 0.8695398, 0.77004045, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1343433419]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.49300003
+anchor_right = 0.5
+anchor_bottom = 0.49300003
+offset_left = -249.0
+offset_top = -361.44006
+offset_right = 245.0
+offset_bottom = 361.55994
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
+scroll_active = false

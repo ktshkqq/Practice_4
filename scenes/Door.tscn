@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bk2ogo5xb7kla"]
+
+[ext_resource type="PackedScene" uid="uid://b8lf7n33mluh0" path="res://resources/door_with_frame/frame.glb" id="1_eyv6f"]
+[ext_resource type="Script" uid="uid://cyoj22t0hclp5" path="res://objects/Door.cs" id="1_mg2as"]
+[ext_resource type="PackedScene" uid="uid://b56f3mixkluu2" path="res://resources/door_with_frame/door.glb" id="2_mg2as"]
+[ext_resource type="AudioStream" uid="uid://c7wxkqngv8bsi" path="res://resources/audio/250539__jhumbucker__door-pounding-increasing-intensity.wav" id="4_1ebfc"]
+[ext_resource type="AudioStream" uid="uid://bl5ca1ojm3jy4" path="res://resources/audio/66772__kevinkace__barrel-break-4.wav" id="4_ao1jx"]
+
+[sub_resource type="Animation" id="Animation_y7q0m"]
+resource_name = "Destroy"
+length = 1.5333333
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_ao1jx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_eyv6f"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorHinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mg2as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorHinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorHinge")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.47381786, 0, 0)
+
+[sub_resource type="Animation" id="Animation_1ebfc"]
+resource_name = "hit"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_1ebfc")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorHinge")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.47381786, 0, 0, 0.26666668, 1, -0.474, 0, -0.04, 0.53333336, 1, -0.474, 0, -0.02, 0.8, 1, -0.47381786, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ebfc"]
+_data = {
+&"Destroy": SubResource("Animation_y7q0m"),
+&"Open": SubResource("Animation_eyv6f"),
+&"RESET": SubResource("Animation_mg2as"),
+&"hit": SubResource("Animation_1ebfc")
+}
+
+[node name="Door" type="Node3D" unique_id=1234180736 node_paths=PackedStringArray("animationPlayer")]
+script = ExtResource("1_mg2as")
+ItemName = "Дверь"
+animationPlayer = NodePath("AnimationPlayer")
+
+[node name="Frame" parent="." unique_id=937016875 instance=ExtResource("1_eyv6f")]
+transform = Transform3D(0.011515652, 0, 0, 0, 0.010197275, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="DoorHinge" type="Node3D" parent="." unique_id=699825227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47381786, 0, 0)
+
+[node name="Door" parent="DoorHinge" unique_id=1661622986 instance=ExtResource("2_mg2as")]
+transform = Transform3D(0.011179425, 0, 0, 0, 0.010181547, 0, 0, 0, 0.01, 0.47381783, 0, -0.07096085)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1908154319]
+libraries/ = SubResource("AnimationLibrary_1ebfc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2089355789]

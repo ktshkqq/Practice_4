@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://btn350dcbvidj"]
+
+[ext_resource type="Script" uid="uid://bco3nfdnybp1i" path="res://objects/Book.cs" id="1_pu0g8"]
+[ext_resource type="PackedScene" uid="uid://cimw81845jwic" path="res://resources/book/medieval_open_book_2.glb" id="2_a87uv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rwhe3"]
+
+[node name="Book" type="Area3D" unique_id=850778030 node_paths=PackedStringArray("canvasLayer", "richTextLabel")]
+script = ExtResource("1_pu0g8")
+canvasLayer = NodePath("CanvasLayer")
+richTextLabel = NodePath("CanvasLayer/RichTextLabel")
+metadata/_custom_type_script = "uid://bco3nfdnybp1i"
+
+[node name="Sketchfab_Scene" parent="." unique_id=1312591618 instance=ExtResource("2_a87uv")]
+physics_interpolation_mode = 1
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, -0.0014908314, 0, 0.0028432608)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=960570744]
+shape = SubResource("SphereShape3D_rwhe3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1235433871]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" unique_id=1607611291]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 952.0
+offset_bottom = 541.0
+color = Color(0.20032999, 0.20033002, 0.20032993, 0.9607843)
+
+[node name="TextureRect2" type="ColorRect" parent="CanvasLayer" unique_id=1709243466]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -401.0
+offset_right = 583.0
+offset_bottom = 400.0
+color = Color(0.9324003, 0.8695398, 0.77004045, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=555733973]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.49300003
+anchor_right = 0.5
+anchor_bottom = 0.49300003
+offset_left = -540.0
+offset_top = -361.44006
+offset_right = 544.0
+offset_bottom = 361.55994
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+fit_content = true
+scroll_active = false
